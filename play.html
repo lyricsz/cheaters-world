@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="allCss/index.css" />
+    <style>
+        button{
+            width: 45%;
+            margin-top: 2vh;
+            float: left;
+            margin-left: 2.5%;
+        }
+        button:hover{
+            width: 45%;
+        }
+        button:nth-child(6){
+            width: 60vw;
+            margin-left: 20vw;
+            margin-right: 20vw;
+        }
+        button:nth-child(7){
+            width: 90vw;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <button onclick="stage1()">Stage 1</button>
+    <button onclick="stage2()">Stage 2</button>
+    <button onclick="stage3()">Stage 3</button>
+    <button onclick="stage4()">Stage 4</button>
+    <button onclick="stage5()">Stage 5</button>
+    <button onclick="unlimited()">Free Play</button>
+    <script>
+
+        const allBtn = document.querySelectorAll("button");
+        allBtn.forEach((a) => {
+                a.disabled = true;
+        })
+
+        if((window.localStorage.getItem("level") === null) || (window.localStorage.getItem("level") === undefined) || (window.localStorage.getItem("level") === false) || (window.localStorage.getItem("level") === '')){
+            allBtn[0].disabled = false;
+        }else{
+            for(let i = 0; i < Number(window.localStorage.getItem("level")); i++){
+                allBtn[i].disabled = false;
+            }
+        }
+
+        function stage1(){
+            window.location = "level1/index.html";
+        }
+
+        function stage2(){
+            window.location = "level2/index.html";
+        }
+
+        function stage3(){
+            window.location = "level3/index.html";
+        }
+
+        function stage4(){
+            window.location = "level4/index.html";
+        }
+
+        function stage5(){
+            window.location = "level5/index.html";
+        }
+
+        function unlimited(){
+            window.location = "unlimited/index.html";
+        }
+
+        btn1 = allBtn[0];
+        let width = btn1.offsetWidth;
+        let height = btn1.offsetHeight;
+        let size = Math.min(width, height);
+
+        allBtn.forEach((a) => {
+            a.style.fontSize = size * 0.25 + "px"
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="allCss/index.css" />
+</head>
+<body>
+    <header>
+        <h1></h1>
+    </header>
+    <main>
+        <button onclick="play()">Play</button>
+        <button onclick="about()">About</button>
+        <button onclick="support()">Support</button>
+        <button onclick="exit()">Exit</button>
+    </main>
+    <script src="allJs/homeNavigate.js"></script>
+    <script>
+        const allBtn = document.querySelectorAll("button");
+
+        btn1 = allBtn[0];
+        let width = btn1.offsetWidth;
+        let height = btn1.offsetHeight;
+        let size = Math.min(width, height);
+
+        allBtn.forEach((a) => {
+            a.style.fontSize = size * 0.25 + "px"
+        })
+    </script>
+</body>
+</html>
